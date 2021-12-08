@@ -4,8 +4,13 @@ on:
     branches:
       - adf_publish
 jobs:
+  CheckoutCode:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
   DeployStaging:
     runs-on: ubuntu-latest
+    needs: CheckoutCode
     steps:
     - uses: actions/checkout@v2
     - name: Login via Az module

@@ -1,24 +1,27 @@
-
-
-steps:
-  - name: Login via Az module
-    uses: azure/login@v1
-    with:
-      creds: ${{ secrets.AZURE_CREDENTIALS }}
-      enable-AzPSSession: true 
-  - name: data-factory-deploy
-    uses: Azure/data-factory-deploy-action@v1.1.0
-    with:
-      # Data Factory resource group name
-      resourceGroupName: 
-      # Data factory name
-      dataFactoryName: 
-      # ARM template file name
-      armTemplateFile: # optional, default is ARMTemplateForFactory.json
-      # ARM template parameters file name
-      armTemplateParametersFile: # optional, default is ARMTemplateParametersForFactory.json
-      # Parameters which will be replaced in the ARM template
-      additionalParameters: # optional, default is 
+name: ADF Workflow Test
+on: [push]
+jobs:
+  DeployStaging:
+  runs-on: windows-latest
+  steps:
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true 
+    - name: data-factory-deploy
+      uses: Azure/data-factory-deploy-action@v1.1.0
+      with:
+        # Data Factory resource group name
+        resourceGroupName: rg-github-actions-test
+        # Data factory name
+        dataFactoryName: adf-staging-njl
+        # ARM template file name
+        armTemplateFile: # optional, default is ARMTemplateForFactory.json
+        # ARM template parameters file name
+        armTemplateParametersFile: # optional, default is ARMTemplateParametersForFactory.json
+        # Parameters which will be replaced in the ARM template
+        additionalParameters: # optional, default is 
  
 
 

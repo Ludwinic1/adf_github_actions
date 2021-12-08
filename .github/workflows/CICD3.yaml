@@ -23,6 +23,6 @@ jobs:
       with:
         resourceGroupName: rg-github-actions-test
         dataFactoryName: adf-staging-njl
-        armTemplateFile: ./test1.json
+        armTemplateFile: '{{ GITHUB_WORKSPACE }}/test1.json'
       # armTemplateParametersFile: myArmTemplateParameters.json [optional]
       # additionalParameters: 'key1=value key2=value keyN=value' [optional]

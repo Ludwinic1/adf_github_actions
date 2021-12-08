@@ -1,0 +1,9 @@
+{
+	"name": "adf-github-actions-test",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f6a6a654-60f3-4b5f-845c-6d3512d3e3cd",
+		"tenantId": "2aa8e0e2-e629-4970-b9d6-d534a9ac3386"
+	}
+}

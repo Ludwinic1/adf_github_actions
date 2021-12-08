@@ -2,8 +2,8 @@ name: ADF Workflow Test
 on: [push]
 jobs:
   DeployStaging:
-  runs-on: windows-latest
-  steps:
+    runs-on: windows-latest
+    steps:
     - name: Login via Az module
       uses: azure/login@v1
       with:
@@ -17,11 +17,7 @@ jobs:
         # Data factory name
         dataFactoryName: adf-staging-njl
         # ARM template file name
-        armTemplateFile: # optional, default is ARMTemplateForFactory.json
-        # ARM template parameters file name
-        armTemplateParametersFile: # optional, default is ARMTemplateParametersForFactory.json
-        # Parameters which will be replaced in the ARM template
-        additionalParameters: # optional, default is 
+        
  
 
 

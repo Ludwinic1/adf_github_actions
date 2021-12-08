@@ -2,11 +2,10 @@ name: ADF Workflow Test
 on: 
   push:
     branches:
-      - main
       - adf_publish
 jobs:
   DeployStaging:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Login via Az module
       uses: azure/login@v1
@@ -18,3 +17,6 @@ jobs:
       with:
         resourceGroupName: rg-github-actions-test
         dataFactoryName: adf-staging-njl
+        armTemplateFile: ../../adf-github-actions-test/ARMTemplateForFactory.json
+      # armTemplateParametersFile: myArmTemplateParameters.json [optional]
+      # additionalParameters: 'key1=value key2=value keyN=value' [optional]

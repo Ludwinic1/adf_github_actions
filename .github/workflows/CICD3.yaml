@@ -24,5 +24,3 @@ jobs:
         resourceGroupName: rg-github-actions-test
         dataFactoryName: adf-staging-njl
         armTemplateFile: .github/workflows/test1.json
-      # armTemplateParametersFile: myArmTemplateParameters.json [optional]
-      # additionalParameters: 'key1=value key2=value keyN=value' [optional]

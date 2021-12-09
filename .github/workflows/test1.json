@@ -5,7 +5,7 @@
 		"factoryName": {
 			"type": "string",
 			"metadata": "Data Factory name",
-			"defaultValue": "adf-github-actions-test222"
+			"defaultValue": "adf-staging-njl"
 		}
 	},
 	"variables": {

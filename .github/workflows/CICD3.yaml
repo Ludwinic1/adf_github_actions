@@ -17,7 +17,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        enable-AzPSSession: true 
+        enable-AzPSSession: false 
     - name: data-factory-staging-deploy
       uses: Azure/data-factory-deploy-action@v1.1.0
       with:

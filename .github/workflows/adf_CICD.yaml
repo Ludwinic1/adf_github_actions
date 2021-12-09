@@ -36,6 +36,6 @@ jobs:
       uses: Azure/data-factory-deploy-action@v1.1.0
       with:
         resourceGroupName: rg-github-actions-test
-        dataFactoryName: adf-prod-njl
+        dataFactoryName: adf-prod-njl2
         armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
         armTemplateParametersFile: adf-github-actions-test/prod/adf_parameters_prod.json

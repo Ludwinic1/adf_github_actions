@@ -6,6 +6,7 @@ on:
 jobs:
   DeployStaging:
     runs-on: ubuntu-latest
+    environment: Staging
     steps:
     - uses: actions/checkout@v2
     - name: Login via Az module
@@ -22,6 +23,7 @@ jobs:
         armTemplateParametersFile: adf-github-actions-test/ARMTemplateParametersForFactory.json
   DeployProd:
     runs-on: ubuntu-latest
+    environment: Production
     needs: DeployStaging 
     steps:
     - uses: actions/checkout@v2

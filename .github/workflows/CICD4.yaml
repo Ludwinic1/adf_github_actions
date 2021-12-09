@@ -1,4 +1,4 @@
-name: ADF Workflow Test
+name: ADF Workflow Test2
 on: 
   push:
     branches:

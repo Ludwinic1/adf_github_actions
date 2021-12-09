@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"factoryName": {
-			"value": "adf-github-actions-test"
+			"value": "adf-staging-njl"
 		}
 	}
 }

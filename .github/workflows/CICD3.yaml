@@ -30,7 +30,7 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         enable-AzPSSession: true 
-    - name: data-factory-staging-deploy
+    - name: data-factory-prod-deploy
       uses: Azure/data-factory-deploy-action@v1.1.0
       with:
         resourceGroupName: rg-github-actions-test

@@ -2,7 +2,7 @@ name: ADF Workflow Test
 on: 
   push:
     branches:
-      - main
+      - adf_publish
 jobs:
   DeployStaging:
     runs-on: ubuntu-latest

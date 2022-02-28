@@ -5,6 +5,12 @@
 		"factoryName": {
 			"value": "adf-github-actions-test"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://KeyVault1njl.vault.azure.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},

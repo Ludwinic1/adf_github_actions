@@ -1,0 +1,41 @@
+name: ADF Workflow Test2
+on: 
+  push:
+    branches:
+      - adf_publish
+jobs:
+  DeployStaging:
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true 
+    - name: data-factory-staging-deploy
+      uses: Azure/data-factory-deploy-action@v1.1.0
+      with:
+        resourceGroupName: rg-github-actions-test
+        dataFactoryName: adf-staging-njl
+        armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
+        armTemplateParametersFile: adf-github-actions-test/staging/staging_adf_parameters.json
+  DeployProd:
+    runs-on: ubuntu-latest
+    environment: Production
+    needs: DeployStaging 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true 
+    - name: data-factory-prod-deploy
+      uses: Azure/data-factory-deploy-action@v1.1.0
+      with:
+        resourceGroupName: rg-github-actions-test
+        dataFactoryName: adf-prod-njl
+        armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
+        armTemplateParametersFile: adf-github-actions-test/prod/adf_parameters_prod.json

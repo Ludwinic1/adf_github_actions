@@ -7,7 +7,7 @@
 			"value": "adf-github-actions-test"
 		},
 		"AzureSqlDatabase1_connectionString": {
-			"value": "integrated security=False;encrypt=True;connection timeout=30;data source=sqlservernjl44.database.windows.net;initial catalog=sqldbnjl;user id=ludwinic1""
+			"value": "integrated security=False;encrypt=True;connection timeout=30;data source=sqlservernjl44.database.windows.net;initial catalog=sqldbnjl;user id=ludwinic1"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://KeyVault1njl.vault.azure.net/"

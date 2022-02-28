@@ -39,3 +39,4 @@ jobs:
         dataFactoryName: adf-prod-njl
         armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
         armTemplateParametersFile: adf-github-actions-test/prod/adf_parameters_prod.json
+        #test

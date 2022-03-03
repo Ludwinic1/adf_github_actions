@@ -1,5 +1,8 @@
 name: ADF Workflow Test333
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - adf_publish
 jobs:
   DeployStaging:
     runs-on: ubuntu-latest

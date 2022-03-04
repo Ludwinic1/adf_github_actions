@@ -6,7 +6,6 @@
 		"factoryName": {
 			"value": "adf-github-actions-test"
 		},
-		
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://KeyVault1njl.vault.azure.net/"
 		}

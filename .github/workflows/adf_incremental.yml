@@ -1,1 +1,80 @@
-
+name: ADF Workflow Test Incremental
+on: 
+  push:
+    branches:
+      - adf_publish
+jobs:
+  DeployStaging:
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true 
+    - name: Deploy Azure Resource Manager (ARM) Template
+      uses: Azure/arm-deploy@v1
+      with:
+        # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
+        scope: 
+        # Override the Subscription Id set by Azure Login.
+#         subscriptionId: # optional
+        # Specify the Id for the Management Group, only required for Management Group Deployments.
+#         managementGroupId: # optional
+        # Provide the target region, only required for management Group or Subscription deployments.
+#         region: # optional
+        # Provide the name of a resource group, only required for resource Group deployments.
+#         resourceGroupName: rg-github-actions-test
+        # Specify the path or URL to the Azure Resource Manager template.
+        template: adf-github-actions-test/ARMTemplateForFactory.json
+        # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
+        deploymentMode: Complete
+        # Specifies the name of the resource group deployment to create.
+        deploymentName: deploy1
+        # Supply deployment parameter values.
+        parameters: adf-github-actions-test/prod/adf_parameters_prod.json
+        # Specify whether to fail the action if some data is written to stderr stream of az cli. Valid values are: true, false
+        failOnStdErr: # optional, default is true
+        # Specify any additional arguments for the deployment.
+#         additionalArguments: # optional
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#     name: data-factory-staging-deploy
+#       uses: Azure/data-factory-deploy-action@v1.1.0
+#       with:
+#         resourceGroupName: rg-github-actions-test
+#         dataFactoryName: adf-staging-njl
+#         armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
+#         armTemplateParametersFile: adf-github-actions-test/staging/adf_V2_staging_params.json
+#   DeployProd:
+#     runs-on: ubuntu-latest
+#     environment: Production
+#     needs: DeployStaging 
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Login via Az module
+#       uses: azure/login@v1
+#       with:
+#         creds: ${{ secrets.AZURE_CREDENTIALS }}
+#         enable-AzPSSession: true 
+#     - name: data-factory-prod-deploy
+#       uses: Azure/data-factory-deploy-action@v1.1.0
+#       with:
+#         resourceGroupName: rg-github-actions-test
+#         dataFactoryName: adf-prod-njl
+#         armTemplateFile: adf-github-actions-test/ARMTemplateForFactory.json
+#         armTemplateParametersFile: adf-github-actions-test/prod/adf_parameters_prod.json
+#         #test

@@ -18,7 +18,7 @@ jobs:
       uses: Azure/arm-deploy@v1
       with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
-        scope: 
+        scope: resourcegroup
         # Override the Subscription Id set by Azure Login.
 #         subscriptionId: # optional
         # Specify the Id for the Management Group, only required for Management Group Deployments.

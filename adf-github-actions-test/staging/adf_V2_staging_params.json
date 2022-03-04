@@ -6,9 +6,7 @@
 		"factoryName": {
 			"value": "adf-github-actions-test"
 		},
-		"AzureSqlDatabase1_connectionString": {
-			"value": "integrated security=False;encrypt=True;connection timeout=30;data source=@{linkedService().FQDB};initial catalog=@{linkedService().DBNAME};user id=ludwinic1"
-		},
+		
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://KeyVault1njl.vault.azure.net/"
 		}

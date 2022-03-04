@@ -34,7 +34,7 @@ jobs:
         # Specifies the name of the resource group deployment to create.
         deploymentName: deploy1
         # Supply deployment parameter values.
-        parameters: adf-github-actions-test/staging/adf_V2_staging_params.json
+        parameters: ARMTemplateParametersForFactory.json
         # Specify whether to fail the action if some data is written to stderr stream of az cli. Valid values are: true, false
 #         failOnStdErr: # optional, default is true
         # Specify any additional arguments for the deployment.
